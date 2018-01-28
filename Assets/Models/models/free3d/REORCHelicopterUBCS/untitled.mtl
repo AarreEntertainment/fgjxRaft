@@ -1,0 +1,50 @@
+# Blender MTL File: 'None'
+# Material Count: 4
+
+newmtl 0
+Ns 9.803922
+Ka 0.000000 0.000000 0.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.342000 0.342000 0.342000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd helicopter_ubcs_02_d.dds
+map_Ka helicopter_ubcs_02_d.dds
+
+newmtl 1
+Ns 9.803922
+Ka 0.000000 0.000000 0.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.378000 0.378000 0.378000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd helicopter_ubcs_logo_d.dds
+map_Ka helicopter_ubcs_logo_d.dds
+
+newmtl 2
+Ns 9.803922
+Ka 0.000000 0.000000 0.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.513000 0.513000 0.513000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd helicopter_ubcs_glass_d.dds
+map_Ka helicopter_ubcs_glass_d.dds
+
+newmtl 3
+Ns 9.803922
+Ka 0.000000 0.000000 0.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.387000 0.387000 0.387000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd helicopter_ubcs_d.dds
+map_Ka helicopter_ubcs_d.dds
