@@ -11,6 +11,10 @@ public class DayTime : MonoBehaviour {
 	private bool isDay = true;
 	public bool IsDay{ get { return isDay; } }
 
+	private void Start(){
+		progress = Random.Range (0, 190);
+	}
+
 	void Update(){
 		progress = (progress + (360f / (float)lengOfDayInSeconds) * Time.deltaTime) % 360f;
 		isDay = progress < 190f && progress > -190f;

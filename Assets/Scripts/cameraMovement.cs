@@ -8,6 +8,7 @@ public class cameraMovement : MonoBehaviour {
 	public GameObject FlashLight;
 	public GameObject rope;
 	public GameObject Mirror;
+	public GameObject Price;
 	FlashLight flash;
 	[SerializeField]
 	private bool FlashLightOnHand = false;
@@ -46,6 +47,7 @@ public class cameraMovement : MonoBehaviour {
 			if (Vector3.Distance (transform.position, rope.transform.position) <= 2f) {
 				GameObject.Find ("[CameraRig]").transform.parent = rope.transform;
 				rope.GetComponentInParent<Helicopter> ().onRide = true;
+				Price.SetActive (true);
 			}
 		}
 

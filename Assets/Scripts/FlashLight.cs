@@ -14,6 +14,8 @@ public class FlashLight : MonoBehaviour {
 	public GameObject helicopter;
 	public GameObject LightRay;
 	public DayTime DayTime;
+
+	public Material[] flashableMaterials;
 	// Use this for initialization
 	void Start () {
 		lightSource = GetComponentInChildren<Light> ();
@@ -31,8 +33,8 @@ public class FlashLight : MonoBehaviour {
 		//if (!DayTime.IsDay) {
 			if (Physics.Raycast (transform.position, transform.rotation.eulerAngles, out hit)) {
 				//if(hit.collider.gameObject.tag.Contains("Plane")){
-				StartCoroutine(FlashTarget(hit.collider.gameObject));
-				Debug.Log ("raygoes");
+				StartCoroutine(FlashTarget());
+				Debug.Log (hit.collider.gameObject.name);
 				StartCoroutine (flash ());
 				float rand = Random.Range (0, 100);
 				if (rand <= chance) {
@@ -45,20 +47,17 @@ public class FlashLight : MonoBehaviour {
 		//}
 	}
 
-	IEnumerator FlashTarget(GameObject targetObject){
-		Renderer[] targetRenderer = targetObject.GetComponentsInChildren<Renderer> ();
-		List<Material> mat = new List<Material> ();
-		for (int i = 0; i < targetRenderer.Length; i++) {
-			mat.Concat (targetRenderer [i].materials);
-		}
-		foreach (Material curMat in mat) {
+	IEnumerator FlashTarget(){
+		
+		foreach (Material curMat in flashableMaterials) {
+			//Debug.Log (curMat.name);
 			curMat.EnableKeyword ("_EMISSION");
 			//curMat.SetFloat ("_EMISSION", 1);
 			curMat.SetColor ("_EmissionColor", Color.white);
 		}
 
 		yield return new WaitForSeconds (1);
-		foreach (Material curMat in mat) {
+		foreach (Material curMat in flashableMaterials) {
 			curMat.DisableKeyword ("_EMISSION");
 			//curMat.SetFloat ("_EMISSION", 0);
 		}
